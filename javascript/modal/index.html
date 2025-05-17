@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Modal Boxes</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="site">
+			<header class="site__header">
+				<h1>Modal Boxes</h1>
+
+				<button class="button" data-modal-target="modalPertama">
+					Modal Pertama
+				</button>
+				<button class="button" data-modal-target="modalKedua">
+					Modal Kedua
+				</button>
+			</header>
+
+			<div class="modal" id="modalOverlay">
+				<div class="modal__item" id="modalPertama">
+					<header class="modal__header">
+						<h2 class="modal__title">Modal Pertama</h2>
+						<button class="button" data-modal-close>&times;</button>
+					</header>
+					<section class="modal__body">
+						<p>Laborum consectetur aliqua consequat veniam.</p>
+						<p>Culpa duis eu Lorem officia aute pariatur sunt ea anim.</p>
+					</section>
+					<footer class="modal__footer">
+						<p>Et quis consequat nisi ut eiusmod anim.</p>
+					</footer>
+				</div>
+
+				<div class="modal__item" id="modalKedua">
+					<header class="modal__header">
+						<h2 class="modal__title">Modal Kedua</h2>
+						<button class="button" data-modal-close>&times;</button>
+					</header>
+					<section class="modal__body">
+						<p>Laborum consectetur aliqua consequat veniam.</p>
+						<p>Culpa duis eu Lorem officia aute pariatur sunt ea anim.</p>
+					</section>
+					<footer class="modal__footer">
+						<p>Et quis consequat nisi ut eiusmod anim.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
