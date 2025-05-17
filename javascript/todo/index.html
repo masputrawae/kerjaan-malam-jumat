@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <!-- START: ISOLATION -->
+  <div class="isolation">
+
+    <!-- START: HEADER -->
+    <header class="header">
+      <h1 class="header__title">To Do Sederhana</h1>
+      
+      <div class="header__button">
+
+        <button class="btn btn--active" data-tab-target="tabCreate">Create</button>
+        <button class="btn" data-tab-target="tabRead">Read</button>
+        <button class="btn" data-tab-target="tabUpdate">Update</button>
+        <button class="btn" data-tab-target="tabDelete">Delete</button>
+
+      </div>
+    </header>
+    <!-- END: HEADER -->
+
+    <!-- START: MAIN -->
+    <main class="main">
+
+      <article class="main__tabs">
+
+        <!-- START: TAB - CREATE -->
+        <div class="tab tab--active" id="tabCreate">
+
+          <!-- START: FORM -->
+          <form id="create" class="form">
+            <div class="form__input">
+              <label for="createTitle">Title:</label>
+              <input type="text" name="createTitle" id="createTitle" required>
+            </div>
+
+            <div class="form__input">
+              <label for="createDate">Date:</label>
+              <input type="date" name="createDate" id="createDate" required>
+            </div>
+
+            <div class="form__input">
+              <label for="createStatus">Status:</label>
+              <input type="text" name="createStatus" id="createStatus" required>
+            </div>
+
+            <div class="form__input form__input--textarea">
+              <label for="createContent">Content:</label>
+              <textarea name="createContent" id="createContent" cols="30" rows="10" required></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+          </form>
+          <!-- END: FORM -->
+
+        </div>
+        <!-- END: TAB - CREATE -->
+
+        <!-- START: TAB - READ -->
+        <div class="tab" id="tabRead">
+          <ul id="readTask"></ul>
+          <p>TESTING ONLY READ</p>
+        </div>
+        <!-- START: TAB - READ -->
+
+        <!-- START: TAB - UPDATE-->
+        <div class="tab" id="tabUpdate">
+          <p>TESTING ONLY UPDATE</p>
+        </div>
+        <!-- START: TAB - UPDATE-->
+
+        <!-- START: TAB - DELETE -->
+        <div class="tab" id="tabDelete">
+          <p>TESTING ONLY DELETE</p>
+        </div>
+        <!-- START: TAB - DELETE -->
+
+      </article>
+
+    </main>
+    <!-- END: MAIN -->
+
+    <!-- START: FOOTER -->
+    <!-- END: FOOTER -->
+
+  </div>
+  <!-- END: ISOLATION -->
+</body>
+</html>
