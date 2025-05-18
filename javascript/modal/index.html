@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Modal Boxes</title>
-		<link rel="stylesheet" href="style.css" />
-		<script src="script.js" defer></script>
-	</head>
-	<body>
-		<div class="site">
-			<header class="site__header">
-				<h1>Modal Boxes</h1>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Making Modal Boxes With Vanilla Js</title>
+	<link rel="stylesheet" href="./style.css">
+	<script src="./script.js" defer></script>
+</head>
+<body>
+	<!-- START: ISOLATION -->
+	<div class="isolation">
+		
+		<!-- START: HEADER -->
+		<header class="header">
+			<h1 class="header__title">Site Title</h1>
 
-				<button class="button" data-modal-target="modalPertama">
-					Modal Pertama
-				</button>
-				<button class="button" data-modal-target="modalKedua">
-					Modal Kedua
-				</button>
-			</header>
-
-			<div class="modal" id="modalOverlay">
-				<div class="modal__item" id="modalPertama">
-					<header class="modal__header">
-						<h2 class="modal__title">Modal Pertama</h2>
-						<button class="button" data-modal-close>&times;</button>
-					</header>
-					<section class="modal__body">
-						<p>Laborum consectetur aliqua consequat veniam.</p>
-						<p>Culpa duis eu Lorem officia aute pariatur sunt ea anim.</p>
-					</section>
-					<footer class="modal__footer">
-						<p>Et quis consequat nisi ut eiusmod anim.</p>
-					</footer>
-				</div>
-
-				<div class="modal__item" id="modalKedua">
-					<header class="modal__header">
-						<h2 class="modal__title">Modal Kedua</h2>
-						<button class="button" data-modal-close>&times;</button>
-					</header>
-					<section class="modal__body">
-						<p>Laborum consectetur aliqua consequat veniam.</p>
-						<p>Culpa duis eu Lorem officia aute pariatur sunt ea anim.</p>
-					</section>
-					<footer class="modal__footer">
-						<p>Et quis consequat nisi ut eiusmod anim.</p>
-					</footer>
-				</div>
+			<div class="header__button">
+				<button class="button" data-modal-target="modal1">Modal 1</button>
+				<button class="button" data-modal-target="modal2">Modal 2</button>
 			</div>
-		</div>
-	</body>
+		</header>
+		<!-- END: HEADER -->
+
+		<!-- START: MAIN -->
+		<main class="main">
+
+			<!-- START: LOREM -->
+			<article>
+				<h2>Making Modal Boxes With Vanilla Js</h2>
+				<hr>
+				<p>Non dolore in ut dolore. Reprehenderit commodo officia do occaecat ea qui non nostrud eiusmod deserunt. Anim excepteur aliquip pariatur commodo non qui.</p>
+				<p>Lorem nulla incididunt elit dolor deserunt. Nisi laboris eu ullamco mollit quis anim aliquip. Deserunt eiusmod excepteur quis eiusmod voluptate veniam mollit.</p>
+			</article>
+			<!-- END: LOREM -->
+
+			<!-- START: MODAL OVERLAY -->
+			<div class="overlay" id="modalOverlay"></div>
+			<!-- END: MODAL OVERLAY -->
+
+			<!-- START: MODAL 1 -->
+			<div class="modal" id="modal1">
+				<header class="modal__header">
+					<h3 class="modal__title">Modal 1</h3>
+					<button class="button"  data-modal-target="modal1">&times;</button>
+				</header>
+				<article class="modal__body">
+					<p>Tempor dolore duis nostrud cupidatat laborum adipisicing.</p>
+					<p>Aliquip laboris ipsum anim sint ad excepteur ea elit.</p>
+				</article>
+				<footer class="modal__footer">
+					<strong>Hello Modal 1</strong>
+				</footer>
+			</div>
+			<!-- END: MODAL 1 -->
+
+			<!-- START: MODAL 2 -->
+			<div class="modal" id="modal2">
+				<header class="modal__header">
+					<h3 class="modal__title">Modal 2</h3>
+					<button class="button"  data-modal-target="modal2">&times;</button>
+				</header>
+				<article class="modal__body">
+					<p>Quis minim do velit excepteur magna nostrud.</p>
+					<p>Veniam quis aliqua eu irure sunt minim Lorem id est est eiusmod ea.</p>
+				</article>
+				<footer class="modal__footer">
+					<strong>Hello Modal 2</strong>
+				</footer>
+			</div>
+			<!-- END: MODAL 2 -->
+		</main>
+		<!-- END: MAIN -->
+
+		<footer class="footer">
+			<p>&copy; 2025 - Site Title</p>
+		</footer>
+	</div>
+	<!-- END: ISOLATION -->
+</body>
 </html>

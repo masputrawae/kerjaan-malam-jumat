@@ -1,7 +1,7 @@
 const tabsConfig = {
 	buttons: document.querySelectorAll("[data-tab-target]"),
 	tabs: document.querySelectorAll(".tab"),
-	buttonActive: "btn--active",
+	buttonActive: "button--active",
 	tabActive: "tab--active",
 };
 

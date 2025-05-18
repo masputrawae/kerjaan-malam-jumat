@@ -1,57 +1,44 @@
-const ui = {
-	modal: {
-		btnOpen: document.querySelectorAll("[data-modal-target]"),
-		btnClose: document.querySelectorAll("[data-modal-close]"),
+const modalConfig = {
+	buttons: document.querySelectorAll("[data-modal-target]"),
+	overlay: document.getElementById("modalOverlay"),
+	overlayActive: "overlay--active",
 
-		overlay: document.getElementById("modalOverlay"),
-		item: ".modal__item",
-		active: "modal--active",
-	},
+	modal: document.querySelectorAll(".modal"),
+	modalActive: "modal--active",
 };
 
-function openModal(modalId) {
-	const modal = document.getElementById(modalId);
-	if (modal) {
-		ui.modal.overlay.classList.add(ui.modal.active);
-		modal.classList.add(ui.modal.active);
+function modalActive(params) {
+	const idModal = document.getElementById(params);
+	const overlay = modalConfig.overlay;
+
+	if (idModal) {
+		idModal.classList.toggle(modalConfig.modalActive);
+		overlay.classList.toggle(modalConfig.overlayActive);
 	}
 }
 
-function closeModal(modal) {
-	if (modal) {
-		ui.modal.overlay.classList.remove(ui.modal.active);
-		modal.classList.remove(ui.modal.active);
-	}
+function modalDeactive() {
+	modalConfig.overlay.classList.remove(modalConfig.overlayActive);
+	modalConfig.modal.forEach((e) => {
+		e.classList.remove(modalConfig.modalActive);
+	});
 }
 
 function initModal() {
-	ui.modal.btnOpen.forEach((btn) => {
+	modalConfig.buttons.forEach((btn) => {
 		btn.addEventListener("click", () => {
-			const targetId = btn.getAttribute("data-modal-target");
-			openModal(targetId);
+			const targetElement = btn.getAttribute("data-modal-target");
+			modalActive(targetElement);
 		});
 	});
 
-	ui.modal.btnClose.forEach((btn) => {
-		btn.addEventListener("click", (e) => {
-			const modal = e.target.closest(ui.modal.item);
-			closeModal(modal);
-		});
+	modalConfig.overlay.addEventListener("click", () => {
+		modalDeactive();
 	});
 
 	document.addEventListener("keydown", (e) => {
 		if (e.key === "Escape") {
-			document.querySelectorAll(`.${ui.modal.active}`).forEach((modal) => {
-				closeModal(modal);
-			});
-		}
-	});
-
-	ui.modal.overlay.addEventListener("click", (e) => {
-		if (e.target === ui.modal.overlay) {
-			document.querySelectorAll(`.${ui.modal.active}`).forEach((modal) => {
-				closeModal(modal);
-			});
+			modalDeactive();
 		}
 	});
 }
